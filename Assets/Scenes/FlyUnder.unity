@@ -236,6 +236,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af2585d6f60f74545b085be216cb853d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelLoadDelay: 1
+  crash: {fileID: 0}
+  finish: {fileID: 0}
+  successParticles: {fileID: 0}
+  crashParticles: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,7 +510,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8201038009928530001, guid: ee862ad3e8bf4440699525dbe2889828, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.81
+      value: 0.92
       objectReference: {fileID: 0}
     - target: {fileID: 8201038009928530001, guid: ee862ad3e8bf4440699525dbe2889828, type: 3}
       propertyPath: m_LocalPosition.z

@@ -13,15 +13,29 @@ public class Collision : MonoBehaviour
     AudioSource audioSource;
 
     bool isTransitioning = false;
+    bool collisionsEnabled = true;
 
     void Start()
     {
         this.audioSource = GetComponent<AudioSource>();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            collisionsEnabled = !collisionsEnabled;
+        }
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            LoadNextLevel();
+        }
+    }
+
     void OnCollisionEnter(UnityEngine.Collision collision)
     {
-        if (!isTransitioning) {
+        if (!isTransitioning && collisionsEnabled) {
             switch (collision.gameObject.tag)
             {
                 case "Friendly":
