@@ -4,27 +4,57 @@ using UnityEngine.SceneManagement;
 public class Collision : MonoBehaviour
 {
     [SerializeField] float levelLoadDelay = 1f;
+    [SerializeField] AudioClip crash;
+    [SerializeField] AudioClip finish;
 
-    private void OnCollisionEnter(UnityEngine.Collision collision)
+    [SerializeField] ParticleSystem successParticles;
+    [SerializeField] ParticleSystem crashParticles;
+
+    AudioSource audioSource;
+
+    bool isTransitioning = false;
+
+    void Start()
     {
-        switch (collision.gameObject.tag)
-        {
-            case "Friendly":
-                Debug.Log("Friendly!");
-                break;
-            case "Finish":
-                LoadNextLevel();
-                break;
-            default:
-                StartCrashSequence();
-                break;
+        this.audioSource = GetComponent<AudioSource>();
+    }
+
+    void OnCollisionEnter(UnityEngine.Collision collision)
+    {
+        if (!isTransitioning) {
+            switch (collision.gameObject.tag)
+            {
+                case "Friendly":
+                    Debug.Log("Friendly!");
+                    break;
+                case "Finish":
+                    StartSuccessSequence();
+                    break;
+                default:
+                    StartCrashSequence();
+                    break;
+            }
         }
     }
 
     void StartCrashSequence()
     {
+        isTransitioning = true;
+        crashParticles.Play();
+        audioSource.Stop();
+        audioSource.PlayOneShot(crash);
         GetComponent<Movement>().enabled = false;
         Invoke("ReloadLevel", levelLoadDelay);
+    }
+
+    void StartSuccessSequence()
+    {
+        isTransitioning = true;
+        successParticles.Play();
+        audioSource.Stop();
+        audioSource.PlayOneShot(finish);
+        GetComponent<Movement>().enabled = false;
+        Invoke("LoadNextLevel", levelLoadDelay);
     }
 
     void ReloadLevel()
