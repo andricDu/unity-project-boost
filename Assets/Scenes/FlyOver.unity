@@ -474,6 +474,7 @@ GameObject:
   m_Component:
   - component: {fileID: 705507995}
   - component: {fileID: 705507994}
+  - component: {fileID: 705507996}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -558,6 +559,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 20.218, y: -28.941, z: 27.868}
+--- !u!114 &705507996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705507993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3c3bf7837bd4f042b6045b7c87d3298, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementVector: {x: 0, y: 0, z: 0}
+  movementFactor: 0
+  period: 2
 --- !u!4 &709520701 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6568028293381298802, guid: 1ba98bcea73c3db4789badfd414a0908, type: 3}
@@ -784,6 +800,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ba98bcea73c3db4789badfd414a0908, type: 3}
+--- !u!1 &877588162 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8331558000732010227, guid: 1ba98bcea73c3db4789badfd414a0908, type: 3}
+  m_PrefabInstance: {fileID: 1922262593}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &923646462 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4373024888269220893, guid: ee862ad3e8bf4440699525dbe2889828, type: 3}
@@ -943,7 +964,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 90
+  field of view: 75
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -1015,6 +1036,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6568028293381298802, guid: 1ba98bcea73c3db4789badfd414a0908, type: 3}
   m_PrefabInstance: {fileID: 1922262593}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &965439888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877588162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3c3bf7837bd4f042b6045b7c87d3298, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementVector: {x: 12, y: 0, z: 0}
+  movementFactor: 1
+  period: 6
 --- !u!1001 &1087543021
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1550,6 +1586,26 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ba98bcea73c3db4789badfd414a0908, type: 3}
+--- !u!1 &1574780861 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8331558000732010227, guid: 1ba98bcea73c3db4789badfd414a0908, type: 3}
+  m_PrefabInstance: {fileID: 6070449853619659367}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1574780865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574780861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3c3bf7837bd4f042b6045b7c87d3298, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementVector: {x: 5, y: 0, z: 0}
+  movementFactor: 0
+  period: 4
 --- !u!1001 &1589429858
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1736,7 +1792,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 923646462}
   m_Lens:
-    FieldOfView: 90
+    FieldOfView: 75
     OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 1000
@@ -1896,7 +1952,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8331558000732010227, guid: 1ba98bcea73c3db4789badfd414a0908, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 965439888}
   m_SourcePrefab: {fileID: 100100000, guid: 1ba98bcea73c3db4789badfd414a0908, type: 3}
 --- !u!1001 &2058505647
 PrefabInstance:
@@ -2422,7 +2481,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8331558000732010227, guid: 1ba98bcea73c3db4789badfd414a0908, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1574780865}
   m_SourcePrefab: {fileID: 100100000, guid: 1ba98bcea73c3db4789badfd414a0908, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
